@@ -1,0 +1,18 @@
+{%  extends 'base.html.twig' %}
+
+{% block main %}
+
+
+    {% for Sometask in tasks %}
+    <li>ID:{{ Sometask.id }} <br>Task: {{ Sometask.task }} <br>Due: {{ Sometask.dueDate|date("d/m/Y H:i:s") }}</li>
+        <div class="form-inline">
+            <form action="{{ path('edit_task'  , {'id': Sometask.id }) }}">
+                <input type="submit" value="Edit"/>
+            </form>
+            <form action="{{ path('delete_task'  , {'id': Sometask.id }) }}">
+                <input type="submit" value="Delete"/>
+            </form>
+        </div>
+    {% endfor %}
+
+{% endblock %}

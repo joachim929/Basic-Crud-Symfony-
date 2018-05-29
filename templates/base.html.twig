@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>{% block title %}Basic CRUD{% endblock %}</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+          integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+          crossorigin="anonymous">
+</head>
+
+<body>
+<header>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{{ path('welcome') }}">Home</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('new_task') }}">New Task</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{ path('task') }}">Tasks</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    {% block main %}{% endblock %}
+</main>
+{% block javascripts %}{% endblock %}
+</body>
+
+</html>
